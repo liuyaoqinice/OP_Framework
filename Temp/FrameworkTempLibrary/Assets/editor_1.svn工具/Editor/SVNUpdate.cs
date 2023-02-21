@@ -31,14 +31,14 @@ public class SVNUpdate : Editor
     private static string _revertPath = (_assetsPath + "/../ITools/SVNMgr").Replace('/', '\\');
     private static string _configPath = (_assetsPath + "/../Config").Replace('/', '\\');
 
-	[MenuItem("SVN工具/SVN Update/SVN UpdateAll %#&Q")]
+	[MenuItem("Tools/SVN工具/SVN Update/SVN UpdateAll %#&Q")]
 	private static void SvnUpdateAllClient()
 	{
 		var path = GetDirPath();
 		SVNCommand(path, "update", true);
 	}
 
-	[MenuItem("SVN工具/还原工具/本地与svn保持一致")]
+	[MenuItem("Tools/SVN工具/还原工具/本地与svn保持一致")]
 	public static void RevertClient()
 	{
 		var process = new Process();
@@ -82,33 +82,33 @@ public class SVNUpdate : Editor
 		process.WaitForExit();
 	}
 
-	[MenuItem("SVN工具/SVN Update/SVN UpdateClient")]
+	[MenuItem("Tools/SVN工具/SVN Update/SVN UpdateClient")]
 	private static void UpdateWork()
 	{
 		SVNCommand(_assetsPath, "update");
 	}
-	[MenuItem("SVN工具/SVN Update/SVN UpdateLua")]
+	[MenuItem("Tools/SVN工具/SVN Update/SVN UpdateLua")]
 	private static void SvnUpdateLua()
 	{
 		var LuaPath = _assetsPath + "/lua*" + _assetsPath + "/Lua.meta*";
 		SVNCommand(LuaPath, "update", true);
 	}
 
-	[MenuItem("SVN工具/SVN Update/SVN UpdateArtModel")]
+	[MenuItem("Tools/SVN工具/SVN Update/SVN UpdateArtModel")]
 	public static void SvnUpdateArtModel()
 	{
 		var LuaPath = _assetsPath + "/Art/Model*" + _assetsPath + "/Art/Model.meta*";
 		SVNCommand(LuaPath, "update", true);
 	}
 
-	[MenuItem("SVN工具/SVN Update/SVN UpdateResModel")]
+	[MenuItem("Tools/SVN工具/SVN Update/SVN UpdateResModel")]
 	public static void SvnUpdateResModel()
 	{
 		var LuaPath = _assetsPath + "/Res/Model*" + _assetsPath + "/Res/Model.meta*";
 		SVNCommand(LuaPath, "update", true);
 	}
 
-	[MenuItem("SVN工具/SVN Commit/Client Commit %#&W")]
+	[MenuItem("Tools/SVN工具/SVN Commit/Client Commit %#&W")]
 	private static void SvnCommit()
 	{
 		var _Path = _assetsPath + "*" + _configPath + "*" ; 
